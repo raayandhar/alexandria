@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-09-06 Fri 11:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Raayan Dhar" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgaf5233b">1. Incremental Predictive Coding</a>
+<ul>
+<li><a href="#org71c2c6a">1.1. A Stable, Fast, and Fully Automatic Learning Algorithm for Predictive Coding Networks</a>
+<ul>
+<li><a href="#org1b269f4">1.1.1. Abstract</a></li>
+<li><a href="#org7341beb">1.1.2. Introduction</a></li>
+<li><a href="#org488390d">1.1.3. Preliminaries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaf5233b" class="outline-2">
+<h2 id="orgaf5233b"><span class="section-number-2">1.</span> Incremental Predictive Coding</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org71c2c6a" class="outline-3">
+<h3 id="org71c2c6a"><span class="section-number-3">1.1.</span> A Stable, Fast, and Fully Automatic Learning Algorithm for Predictive Coding Networks</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org1b269f4" class="outline-4">
+<h4 id="org1b269f4"><span class="section-number-4">1.1.1.</span> Abstract</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Predictive coding networks are the computational models that are trained using the <i>predictive coding framework/algorithm</i>.
+This paper was published in ICLR2024, so it is quite recent (as of writing this).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7341beb" class="outline-4">
+<h4 id="org7341beb"><span class="section-number-4">1.1.2.</span> Introduction</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+<b>Backpropagation</b> is a specific case of the general idea of automatic differentation. In BP, we solely use the reverse accumulation
+mode. This requires a single forward pass to compute and store intermdiate values. Then in the backword pass we collect our adjoints
+(\(\bar{v_i} = \frac{\partial y_j}{\partial v_i}\)). In neural nets, since we typically have a scalar loss, this \(y_j\) is simply \(y\).
+This is also why reverse-mode is used instead of forward mode in neural networks: we only need to evaluate one vector-Jacobian
+product per pass vs. \(n\) Jacobian-vector products in forward mode.
+<br />
+<br />
+Backpropagation, while highly effective for ANNs, is not biologically plausible. It lacks autonomy: "a control signal is required to forward
+signals as well as backwrad signals." This is simply referring to the synchronized process of forwarding inputs (forward pass) and
+backward propagation of errors (backwards pass). Additionally, it lacks local plasticity. This is referring to the fact that
+the error signal during backprop is calculated globally at the output layer, and then distributed backward: weight updates in
+BP depend on global error.
+<br />
+<br />
+In neuroscience and machine learning, biologically plausability is important "when it comes to implementations of
+low-energy analog/neuromorohpic chips: <i>parallelization, localility, and automation</i> are key to building efficient models
+that can be trained end-to-end on non-von-Neumann machines." PC is an algorithm that has most of the above properties.
+<br />
+<br />
+The key idea behind learning in PC is that we minimizing the prediction error of every neuron. Additionally, it approximates BP in
+layered networks (i.e., MLP/FF nets, RNNs). It is also an energy-based model: a type of probabilistic model that use an 'energy' 
+function to represent dependencies between variables. Notably, "PC is based on the assumption that brains implement an internal
+generative model of the world, needed to predict incoming stimuli (or data)." Learning happens by updating internal neural activities
+and synapses (states) and is computationally done by minimizing <i>variational free energy</i>. This idea lends itself to the <b>free energy
+principle</b>, which "is a theoretical framework suggesting that the brain reduces surprise or uncertainty by making predctions based
+on internal models and updating them using sensory input."
+<br />
+<br />
+This minimization is done in two steps:
+</p>
+<ol class="org-ol">
+<li>internal nerual activities are updated in parallel until convergence and</li>
+<li>synaptic weights are updated to minimize the same energy function.</li>
+</ol>
+<p>
+In this paper, there is a sentence that has a lot of loaded terms. I will attempt to break them down in detail. Specifically, I am
+referring to "<i>This message passing scheme of predictive coding is, in fact, an efficient way of inverting a hierarchical Gaussian
+generative model by approximating an evidence lower bound using Laplace and mean field approximation.</i>"
+<br />
+<br />
+First, <b>message passing schemes</b> simply refers to an algorithm or technique where information is exchanged between nodes (or
+components) of a network to achieve some optimization or computation goal. I suspect that this originates from <i>channel coding theory</i>
+as I have seen this term used before in the context of iterative error-correcting code decoding algorithms. In fact, there are
+some parallels between PC and algorithms in channel coding theory, such as the Viterbi algorithm or belief propagation.
+Automatic differentiation in its computational graph form is obviously a message passing scheme. As a result, so is BP.
+<br />
+<br />
+A <b>hierarchical Gaussian generative model</b> requires breaking down individual terms. The <b>hierarchical</b> portion refers to a 
+layered structure, i.e., abstractions/scales of the data. Each level influences the ones below it. The <b>Gaussian</b> portions indicates that
+at each level, the variables are assumed to follow Gaussian distributions. The <b>generative model</b> part refers to a class of models
+which are interested in learning \(p(x, y)\) instead of i.e., <b>discriminative models</b> which learn \(p(x|y)\). 
+<br />
+<br />
+<b>Inverting</b> this model involves working backwards from observed data to "infer" the underlying parameters (<i>causes</i>, which is
+a term used throughout the paper). This can also be thought of using \(p(x, y)\) to do the task of \(p(x|y)\). 
+<br />
+<br />
+The <b>evidence lower bound</b> or <b>ELBO</b> is a lower bound on the log-likelihood of some observed data and can be optimized against.
+Specifically, it is
+\[
+\ln p_\theta (x) \geq \mathbb{E}_{z \sim q_\phi(\cdot | x)} \left[ \ln \frac{p_\theta (x, z)}{q_\phi (z|x)} \right]
+\]
+It is a concept from the method of <b>variational inference</b>, and maximizing this lower bound (i.e., by optimization) is equivalent to
+minimizing the difference between the true posterior distribution (often intractable) and an approximation of it.
+<br />
+<br />
+<b>Laplace approximation</b> is a method for approximating integrals of exponential functions. In the context of Bayesian active inference,
+ it is used to approximate posterior distributions with Gaussian distributions.
+<br />
+<br />
+<b>Mean field approximation</b> is an approximation method from varational inference, where we assume that different groups
+of variables are treated as independent in order to simplify or make tractable a distribution.
+</p>
+</div>
+</div>
+<div id="outline-container-org488390d" class="outline-4">
+<h4 id="org488390d"><span class="section-number-4">1.1.3.</span> Preliminaries</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+In the preliminaries section
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Raayan Dhar</p>
+<p class="date">Created: 2024-09-06 Fri 11:59</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

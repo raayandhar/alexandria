@@ -1,0 +1,80 @@
+* Incremental Predictive Coding
+
+** A Stable, Fast, and Fully Automatic Learning Algorithm for Predictive Coding Networks
+
+*** Abstract
+Predictive coding networks are the computational models that are trained using the /predictive coding framework/algorithm/.
+This paper was published in ICLR2024, so it is quite recent (as of writing this).
+
+*** Introduction
+*Backpropagation* is a specific case of the general idea of automatic differentation. In BP, we solely use the reverse accumulation
+mode. This requires a single forward pass to compute and store intermdiate values. Then in the backword pass we collect our adjoints
+($\bar{v_i} = \frac{\partial y_j}{\partial v_i}$). In neural nets, since we typically have a scalar loss, this $y_j$ is simply $y$.
+This is also why reverse-mode is used instead of forward mode in neural networks: we only need to evaluate one vector-Jacobian
+product per pass vs. $n$ Jacobian-vector products in forward mode.
+\\
+\\
+Backpropagation, while highly effective for ANNs, is not biologically plausible. It lacks autonomy: "a control signal is required to forward
+signals as well as backwrad signals." This is simply referring to the synchronized process of forwarding inputs (forward pass) and
+backward propagation of errors (backwards pass). Additionally, it lacks local plasticity. This is referring to the fact that
+the error signal during backprop is calculated globally at the output layer, and then distributed backward: weight updates in
+BP depend on global error.
+\\
+\\
+In neuroscience and machine learning, biologically plausability is important "when it comes to implementations of
+low-energy analog/neuromorohpic chips: /parallelization, localility, and automation/ are key to building efficient models
+that can be trained end-to-end on non-von-Neumann machines." PC is an algorithm that has most of the above properties.
+\\
+\\
+The key idea behind learning in PC is that we minimizing the prediction error of every neuron. Additionally, it approximates BP in
+layered networks (i.e., MLP/FF nets, RNNs). It is also an energy-based model: a type of probabilistic model that use an 'energy' 
+function to represent dependencies between variables. Notably, "PC is based on the assumption that brains implement an internal
+generative model of the world, needed to predict incoming stimuli (or data)." Learning happens by updating internal neural activities
+and synapses (states) and is computationally done by minimizing /variational free energy/. This idea lends itself to the *free energy
+principle*, which "is a theoretical framework suggesting that the brain reduces surprise or uncertainty by making predctions based
+on internal models and updating them using sensory input."
+\\
+\\
+This minimization is done in two steps:
+1) internal nerual activities are updated in parallel until convergence and
+2) synaptic weights are updated to minimize the same energy function.
+In this paper, there is a sentence that has a lot of loaded terms. I will attempt to break them down in detail. Specifically, I am
+referring to "/This message passing scheme of predictive coding is, in fact, an efficient way of inverting a hierarchical Gaussian
+generative model by approximating an evidence lower bound using Laplace and mean field approximation./"
+\\
+\\
+First, *message passing schemes* simply refers to an algorithm or technique where information is exchanged between nodes (or
+components) of a network to achieve some optimization or computation goal. I suspect that this originates from /channel coding theory/
+as I have seen this term used before in the context of iterative error-correcting code decoding algorithms. In fact, there are
+some parallels between PC and algorithms in channel coding theory, such as the Viterbi algorithm or belief propagation.
+Automatic differentiation in its computational graph form is obviously a message passing scheme. As a result, so is BP.
+\\
+\\
+A *hierarchical Gaussian generative model* requires breaking down individual terms. The *hierarchical* portion refers to a 
+layered structure, i.e., abstractions/scales of the data. Each level influences the ones below it. The *Gaussian* portions indicates that
+at each level, the variables are assumed to follow Gaussian distributions. The *generative model* part refers to a class of models
+which are interested in learning $p(x, y)$ instead of i.e., *discriminative models* which learn $p(x|y)$. 
+\\
+\\
+*Inverting* this model involves working backwards from observed data to "infer" the underlying parameters (/causes/, which is
+a term used throughout the paper). This can also be thought of using $p(x, y)$ to do the task of $p(x|y)$. 
+\\
+\\
+The *evidence lower bound* or *ELBO* is a lower bound on the log-likelihood of some observed data and can be optimized against.
+Specifically, it is
+$$
+\ln p_\theta (x) \geq \mathbb{E}_{z \sim q_\phi(\cdot | x)} \left[ \ln \frac{p_\theta (x, z)}{q_\phi (z|x)} \right]
+$$
+It is a concept from the method of *variational inference*, and maximizing this lower bound (i.e., by optimization) is equivalent to
+minimizing the difference between the true posterior distribution (often intractable) and an approximation of it.
+\\
+\\
+*Laplace approximation* is a method for approximating integrals of exponential functions. In the context of Bayesian active inference,
+ it is used to approximate posterior distributions with Gaussian distributions.
+\\
+\\
+*Mean field approximation* is an approximation method from varational inference, where we assume that different groups
+of variables are treated as independent in order to simplify or make tractable a distribution.
+*** Preliminaries
+In the preliminaries section
+
