@@ -10,4 +10,6 @@ which will be moved to my personal website as they are written.
 At some point, this entire structure will be moved to my personal
 website.
 
+For a structure of the repository, reefer to `structure.md`.
+
 ![Image missing](images/README.png)
