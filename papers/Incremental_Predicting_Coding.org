@@ -75,6 +75,25 @@ minimizing the difference between the true posterior distribution (often intract
 \\
 *Mean field approximation* is an approximation method from varational inference, where we assume that different groups
 of variables are treated as independent in order to simplify or make tractable a distribution.
+*** Detour: Variational inference
+Inference in probabilistic methods is often intractible. There are algorithms that provide approximate solutions (e.g., by marginal inference) by using subroutines
+that involve sampling random variables. A well known sampling-based inference algorithm is Markov Chain Monte-Carlo (MCMC). These sampling-based methods
+have some shortcomings:
+1. Hard to tell how close they are to a good solution given the finite amount of time that they have in practice.
+2. In order to quickly reach a good solution, MCMC methods require choosing an appropriate sampling technique, which is an art in itself.
+*Variational methods* are a family of algorithms that cast inference as an /optimization problem/.
+\\
+\\
+Suppose we are given some intractable distribution $p$. Variational techniques try to solve an optimization problem over a class of tractable
+distributions $\mathcal{Q}$ in order to find a a $q \in \mathcal{Q}$ most similar to $p$. We then use this $q$ in place of $p$. 
+Some important differences are that
+- Variational approaches almost never find the globally optimal solution
+- However, we will always know if they converged. In some cases, we have bounds on their accuracy.
+- In practice, variational methods scale better and more easily accelerated by hardware and performance engineering
 *** Preliminaries
-In the preliminaries section
+In the preliminaries section, they introduce the formulation of predictive coding as a generative model in the following way.
+
+
+
+
 
